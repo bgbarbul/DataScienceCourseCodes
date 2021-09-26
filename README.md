@@ -1,5 +1,7 @@
 # DataScienceCourseCodes
  Kürt Academia
+ 
+ https://kurtakademia.hu/kepzeseink/data-science/
 
 Az adatok nyelvét beszélő specialisták, azaz a Data Scientistek a következő évek legkeresettebb szakemberei közé tartoznak. Hogy miért vagyunk biztosak ebben? 
 
