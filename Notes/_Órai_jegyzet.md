@@ -39,15 +39,15 @@
 - mult['TARGET_NOT_DEFAULT'].value_counts()
 
 ***
-1.0    17901
-0.0     4249
-Name: TARGET_NOT_DEFAULT, dtype: int64
+- 1.0    17901
+- 0.0     4249
+- Name: TARGET_NOT_DEFAULT, dtype: int64
 ***
 
 #### Kitöletetlen értékek esetén
 - jovo['TARGET_NOT_DEFAULT'].value_counts()
 ***
-Series([], Name: TARGET_NOT_DEFAULT, dtype: int64)
+- Series([], Name: TARGET_NOT_DEFAULT, dtype: int64)
 ***
 
 
