@@ -72,7 +72,7 @@ def fuggvenynev(x):
 
 ## Új oszlop létrehozása fügvénnyel - sor alapján
 
-- df['UjOSZLOPNEV'] = df.apply(fuggvenynev1, axis=1)
+- df['UJOSZLOPNEV'] = df.apply(fuggvenynev1, axis=1)
 
 ```python
 {
@@ -87,15 +87,15 @@ def fuggvenynev1(x):
 # Modelezés
 
 ## Bemenő változók tömb létrehozása
-bemeno_valtozok = ['A', 'B', 'C', 'D']
-bemeno_valtozok = ['Nyugdij_ertek', 'Sex_F', 'Age', 'PERSONAL_NET_INCOME' , 'MATE_INCOME']
+- bemeno_valtozok = ['A', 'B', 'C', 'D']
+- bemeno_valtozok = ['Nyugdij_ertek', 'Sex_F', 'Age', 'PERSONAL_NET_INCOME' , 'MATE_INCOME']
 
 ## Dataframe bemenő vátozói táblázat
-df[bemeno_valtozok]
+- df[bemeno_valtozok]
 
 ## Céltváltozó sting létrehozása
-celvaltozo = "TARGET_NOT_DEFAULT"
+- celvaltozo = "TARGET_NOT_DEFAULT"
 
 ## Új data frame létrehozása
-new_df = df[df['OSZLOP'] == ÉRTÉK_1]
-ismert_df = df[df['past_or_future'] == "past"]
+- new_df = df[df['OSZLOP'] == ÉRTÉK_1]
+- ismert_df = df[df['past_or_future'] == "past"]
