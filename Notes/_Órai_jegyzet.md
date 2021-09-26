@@ -99,3 +99,59 @@ def fuggvenynev1(x):
 ## Új data frame létrehozása
 - new_df = df[df['OSZLOP'] == ÉRTÉK_1]
 - ismert_df = df[df['past_or_future'] == "past"]
+
+## SKLearn model importálása -> TRAIN TEST SPLIT: tanuló és tesztelő halmaz szétválasztása
+- from sklearn.model_selection import train_test_split
+
+### Alkalmazása
+- train_df, test_df = train_test_split(ISMERT_DF, random_state= 42, test_size=0.3
+
+## SKLearn TREE importálása -> DecisionTreeClassifier: döntési fa megvalósítása
+- model = DecisionTreeClassifier(random_state=42,max_depth=3)
+- MAX MÉLYSÉG BEÁLLÍTÁSA
+
+## Betanulás
+- model.fit(train_df[bemeno_valtozok], train_df[celvaltozo])
+
+## Prediktálás
+- pred = model.predict(test_df[bemeno_valtozok])
+- test_df['prediction'] = model.predict(test_df[bemeno_valtozok])
+
+## Pontosság vizsgálta
+- from sklearn.metrics import accuracy_score
+- accuracy_score(test_df[celvaltozo], test_df['prediction'])
+
+## Számítási zavar mátrix kiszámítása az osztályozás pontosságához - confusion_matrix
+- from sklearn.metrics import confusion_matrix
+- confusion_matrix(test_df[celvaltozo], test_df['prediction'])
+
+## SKLearn DecisionTreeClassifier export
+- from sklearn.tree import export_text
+- from sklearn.tree import plot_tree
+- fig = plt.figure(figsize=(35,35))
+- a = plot_tree(model, feature_names=bemeno_valtozok, class_names=["EGYIK_OSZTALY","MASIK_OSZTALY"], filled=True)
+
+
+# Evaluation / Becslés
+
+## Másolat készítése
+test_df = test_df.copy()
+
+## 2 új oszlop default értékkel
+- test_df['p0'] = 0
+- test_df['p1'] = 0
+
+## Valószínüségi becslés
+- test_df[['p0','p1']] = model.predict_proba(test_df[bemeno_valtozok])
+
+## Profit
+- test_df['profit_az_ugyfelen']=test_df[celvaltozo].apply(profit)
+```python
+{
+    def profit(x):
+    if x==1:
+        return 15000
+    else:
+        return -100000
+}
+```
