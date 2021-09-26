@@ -155,3 +155,67 @@ test_df = test_df.copy()
         return -100000
 }
 ```
+
+## Egy kis ábrázolás
+```python
+{
+    x_tengely=[]
+y_tengely=[]
+
+for szazalek in range(0,101,1):
+    limit = szazalek /100.0
+    hitelezettek = test_df[   test_df['p1']>=limit  ]
+    osszprofit = hitelezettek['profit_az_ugyfelen'].sum()
+    x_tengely.append(szazalek)
+    y_tengely.append(osszprofit)
+plt.plot(x_tengely,y_tengely)
+}
+```
+
+## Egy kis NumPy
+- np.max(y_tengely)
+- 4120000
+
+```python
+{
+    for i in range(0, len(y_tengely),1):
+    if y_tengely[i] == np.max(y_tengely):
+        print(x_tengely[i])
+}
+```
+- 86
+
+## Egy kis plotolás
+
+```python
+{
+x_tengely=[]
+y_tengely=[]
+
+for szazalek in range(0,101,1):
+    limit = szazalek /100.0
+    hitelezettek = test_df[   test_df['p1']>=limit  ]
+    osszprofit = hitelezettek['profit_az_ugyfelen'].sum()
+    x_tengely.append(szazalek)
+    y_tengely.append(osszprofit)
+plt.plot(x_tengely,y_tengely)
+}
+```
+
+## Egy kis érték vissza keresés
+
+```python
+{
+for i in range(0,len(y_t),1):
+    if y_t[i] == np.max(y_t):
+        print(x_t[i])
+}
+```
+
+# Okosítsuk fel
+- model=DecisionTreeClassifier(max_depth=4,random_state=42)
+
+## Egy csoport tagjainak minimalizálása - min_samples_leaf
+- model=DecisionTreeClassifier(max_depth=fa_melysege,random_state=42, min_samples_leaf=100)
+
+# K legközelebbi szomszéd
