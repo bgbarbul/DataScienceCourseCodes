@@ -49,13 +49,15 @@ Series([], Name: TARGET_NOT_DEFAULT, dtype: int64)
 
 
 ## Új oszlop létrehozása fügvénnyel - oszlop alapján
-''
+```python
+{
 def fuggvenynev(x):
     if x == "F":
         return 1
     else:
         return 0
-''
+}
+```
 -
 df['UjOSZLOPNEV'] = df['OSZLOPNEV'].apply(fuggvenynev)
 
