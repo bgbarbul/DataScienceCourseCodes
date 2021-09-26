@@ -57,6 +57,8 @@
 
 
 ## Új oszlop létrehozása fügvénnyel - oszlop alapján
+- df['UjOSZLOPNEV'] = df['OSZLOPNEV'].apply(fuggvenynev)
+
 ```python
 {
 def fuggvenynev(x):
@@ -66,19 +68,21 @@ def fuggvenynev(x):
         return 0
 }
 ```
--
-df['UjOSZLOPNEV'] = df['OSZLOPNEV'].apply(fuggvenynev)
 
 
 ## Új oszlop létrehozása fügvénnyel - sor alapján
 
+- df['UjOSZLOPNEV'] = df.apply(fuggvenynev1, axis=1)
+
+´´´python
+{
 def fuggvenynev1(x):
     if x['Age']>67:
         return x['PERSONAL_NET_INCOME']
     else:
         return 0
--
-df['UjOSZLOPNEV'] = df.apply(fuggvenynev1, axis=1)
+}
+´´´
 
 # Modelezés
 
