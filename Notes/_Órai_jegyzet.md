@@ -74,7 +74,7 @@ def fuggvenynev(x):
 
 - df['UjOSZLOPNEV'] = df.apply(fuggvenynev1, axis=1)
 
-´´´python
+```python
 {
 def fuggvenynev1(x):
     if x['Age']>67:
@@ -82,7 +82,7 @@ def fuggvenynev1(x):
     else:
         return 0
 }
-´´´
+```
 
 # Modelezés
 
